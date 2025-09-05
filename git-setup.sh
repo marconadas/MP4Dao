@@ -47,17 +47,11 @@ setup_remote() {
         git push -u origin frontend-dev
         git push -u origin backend-dev
         
-        # Atenção especial para a branch de contratos
-        echo "⚠️  ATENÇÃO: A branch 'contracts-private' contém smart contracts sensíveis!"
-        echo "   Considere usar um repositório privado separado para esta branch."
-        read -p "Deseja fazer push da branch contracts-private? (y/N): " push_contracts
-        
-        if [[ $push_contracts =~ ^[Yy]$ ]]; then
-            git push -u origin contracts-private
-            echo "🔒 Branch contracts-private enviada. MANTENHA O REPOSITÓRIO PRIVADO!"
-        else
-            echo "🛡️  Branch contracts-private mantida apenas localmente por segurança."
-        fi
+        echo "✅ Repositório principal configurado!"
+        echo ""
+        echo "🔒 IMPORTANTE: Smart Contracts"
+        echo "Os smart contracts estão em repositório separado: MP4Dao-Contracts-Private"
+        echo "Este repositório deve ser mantido SEMPRE PRIVADO e com acesso restrito."
     fi
 }
 
@@ -85,6 +79,40 @@ create_feature_branch() {
     fi
 }
 
+# Função para configurar repositório de contratos (APENAS PROPRIETÁRIO)
+setup_contracts_repo() {
+    echo ""
+    echo "🔒 Configuração do Repositório de Smart Contracts"
+    echo "================================================"
+    echo "⚠️  ATENÇÃO: Esta configuração é APENAS para o proprietário!"
+    echo ""
+    
+    if [ ! -d "../MP4Dao-Contracts-Private" ]; then
+        echo "❌ Repositório de contratos não encontrado em ../MP4Dao-Contracts-Private"
+        echo "   Certifique-se de que o repositório existe."
+        return 1
+    fi
+    
+    echo "📁 Repositório de contratos encontrado!"
+    echo ""
+    read -p "Digite a URL do repositório PRIVADO para os contratos: " contracts_repo_url
+    
+    if [ ! -z "$contracts_repo_url" ]; then
+        cd ../MP4Dao-Contracts-Private
+        git remote add origin "$contracts_repo_url" 2>/dev/null || git remote set-url origin "$contracts_repo_url"
+        
+        echo "📤 Enviando contratos para repositório privado..."
+        git push -u origin main
+        
+        echo "✅ Repositório de contratos configurado!"
+        echo "🔒 MANTENHA ESTE REPOSITÓRIO SEMPRE PRIVADO!"
+        
+        cd ../MP4Dao
+    else
+        echo "❌ URL não fornecida."
+    fi
+}
+
 # Função para mostrar comandos úteis
 show_useful_commands() {
     echo ""
@@ -104,8 +132,8 @@ show_useful_commands() {
     echo "git checkout develop"
     echo "git merge feature/nome-da-feature"
     echo ""
-    echo "# ⚠️  APENAS PROPRIETÁRIO - Branch de contratos:"
-    echo "git checkout contracts-private"
+    echo "# ⚠️  APENAS PROPRIETÁRIO - Repositório de contratos:"
+    echo "cd ../MP4Dao-Contracts-Private"
     echo ""
     echo "# Sincronizar com remoto:"
     echo "git pull origin main"
@@ -116,20 +144,22 @@ show_useful_commands() {
 while true; do
     echo ""
     echo "Escolha uma opção:"
-    echo "1) Configurar repositório remoto"
-    echo "2) Ver status das branches"
-    echo "3) Criar nova feature branch"
-    echo "4) Mostrar comandos úteis"
-    echo "5) Sair"
+    echo "1) Configurar repositório remoto (dApp público)"
+    echo "2) Configurar repositório de contratos (PRIVADO - só proprietário)"
+    echo "3) Ver status das branches"
+    echo "4) Criar nova feature branch"
+    echo "5) Mostrar comandos úteis"
+    echo "6) Sair"
     echo ""
-    read -p "Digite sua escolha (1-5): " option
+    read -p "Digite sua escolha (1-6): " option
     
     case $option in
         1) setup_remote ;;
-        2) show_branch_status ;;
-        3) create_feature_branch ;;
-        4) show_useful_commands ;;
-        5) 
+        2) setup_contracts_repo ;;
+        3) show_branch_status ;;
+        4) create_feature_branch ;;
+        5) show_useful_commands ;;
+        6) 
             echo "👋 Até logo!"
             exit 0
             ;;

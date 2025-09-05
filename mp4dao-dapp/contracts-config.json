@@ -1,0 +1,34 @@
+{
+  "contractsLocation": {
+    "type": "external",
+    "description": "Smart contracts são mantidos em repositório privado separado",
+    "repository": "MP4Dao-Contracts-Private",
+    "access": "private",
+    "owner_only": true,
+    "note": "Para desenvolvedores: Os contratos não estão disponíveis publicamente por questões de segurança"
+  },
+  "deployedContracts": {
+    "development": {
+      "MP4Token": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "MusicNFT": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "WorkRegistry": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "MP4TimelockController": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY"
+    },
+    "testnet": {
+      "MP4Token": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "MusicNFT": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY", 
+      "WorkRegistry": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "MP4TimelockController": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY"
+    },
+    "mainnet": {
+      "MP4Token": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "MusicNFT": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY",
+      "WorkRegistry": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY", 
+      "MP4TimelockController": "ENDEREÇO_SERÁ_FORNECIDO_APÓS_DEPLOY"
+    }
+  },
+  "abi": {
+    "location": "Disponível após deploy dos contratos",
+    "note": "ABIs serão fornecidas para integração com frontend/backend"
+  }
+}
