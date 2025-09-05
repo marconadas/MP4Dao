@@ -1,0 +1,35 @@
+LETRA DE EXEMPLO - MP4 DAO
+===========================
+
+Título: Minha Música de Teste
+Artista: Teste User
+Género: Afrobeats
+Data: 2024
+
+[Verso 1]
+Esta é uma música de teste
+Para demonstrar o sistema
+MP4 DAO vai proteger
+Todos os direitos do artista
+
+[Refrão]
+Angola, terra de música
+Blockchain para proteger
+Direitos autorais sagrados
+Vamos todos defender
+
+[Verso 2]
+Kizomba, kuduro, semba
+Ritmos da nossa nação
+Com tecnologia moderna
+Guardamos a nossa criação
+
+[Refrão]
+Angola, terra de música
+Blockchain para proteger
+Direitos autorais sagrados
+Vamos todos defender
+
+---
+Este é um ficheiro de teste para demonstrar
+o sistema de upload do MP4 DAO.

@@ -1,0 +1,29 @@
+name = "mp4dao-dev"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[env.development]
+name = "mp4dao-dev"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "mp4dao-prod"
+compatibility_date = "2024-01-01"
+
+# Configuração para Pages (Next.js)
+pages_build_output_dir = "./frontend/out"
+
+# Variáveis de ambiente para desenvolvimento
+[env.development.vars]
+NODE_ENV = "development"
+NEXT_PUBLIC_API_URL = "https://mp4dao-backend-dev.workers.dev"
+NEXT_PUBLIC_CHAIN_ID = "80002"
+NEXT_PUBLIC_RPC_URL = "https://rpc-amoy.polygon.technology/"
+
+# Variáveis de ambiente para produção
+[env.production.vars]
+NODE_ENV = "production"
+NEXT_PUBLIC_API_URL = "https://mp4dao-backend.workers.dev"
+NEXT_PUBLIC_CHAIN_ID = "137"
+NEXT_PUBLIC_RPC_URL = "https://polygon-rpc.com/"
+
