@@ -1,5 +1,7 @@
 # 🎵 MP4 DAO - Plataforma de Registo de Copyright Musical para Angola
 
+> **🔒 Nota de Segurança**: Os smart contracts deste projeto são mantidos em repositório privado separado por questões de segurança. Este repositório contém apenas o dApp (frontend + backend).
+
 MP4 DAO é uma plataforma descentralizada para registo e proteção de direitos autorais musicais em Angola, utilizando tecnologia blockchain para garantir a imutabilidade e transparência dos registos.
 
 ## 🌟 Funcionalidades
@@ -33,8 +35,11 @@ MP4 DAO
 │   ├── Autenticação JWT
 │   ├── Integração Blockchain
 │   └── Gestão de Ficheiros
-├── ⛓️ Smart Contracts (Solidity)
+├── 🔒 Smart Contracts (Repositório Privado)
+│   ├── MP4Token.sol
+│   ├── MusicNFT.sol
 │   ├── WorkRegistry.sol
+│   ├── MP4TimelockController.sol
 │   ├── Testes automatizados
 │   └── Scripts de deploy
 └── 📱 Mobile (React Native)
@@ -62,7 +67,7 @@ cd mp4dao-dapp
 npm install
 cd frontend && npm install
 cd ../backend && npm install
-cd ../contracts && npm install
+# Contratos estão em repositório privado separado
 cd ..
 ```
 
@@ -142,11 +147,7 @@ mp4dao-dapp/
 │   │   ├── blockchain/   # Blockchain integration
 │   │   └── storage/      # File storage
 │   └── package.json
-├── contracts/            # Smart contracts
-│   ├── contracts/       # Solidity contracts
-│   ├── scripts/         # Deployment scripts
-│   ├── test/           # Contract tests
-│   └── package.json
+├── contracts-config.json # Configuração dos contratos deployados
 └── mobile/              # React Native app
     └── [Em desenvolvimento]
 ```
@@ -160,11 +161,8 @@ mp4dao-dapp/
 # Parar todos os serviços
 ./stop-dev.sh
 
-# Executar testes dos contratos
-cd contracts && npm test
-
-# Compilar contratos
-cd contracts && npx hardhat compile
+# Contratos estão em repositório privado separado
+# Consulte CONTRACTS_README.md para mais informações
 
 # Executar apenas o frontend
 cd frontend && npm run dev
@@ -172,8 +170,7 @@ cd frontend && npm run dev
 # Executar apenas o backend
 cd backend && npm run dev
 
-# Executar rede Hardhat
-cd contracts && npx hardhat node
+# Para desenvolvimento local, use os endereços em contracts-config.json
 ```
 
 ### Variáveis de Ambiente
