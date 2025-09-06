@@ -27,3 +27,4 @@ NEXT_PUBLIC_API_URL = "https://mp4dao-backend.workers.dev"
 NEXT_PUBLIC_CHAIN_ID = "137"
 NEXT_PUBLIC_RPC_URL = "https://polygon-rpc.com/"
 
+

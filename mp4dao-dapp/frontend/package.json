@@ -2,6 +2,8 @@
   "name": "@mp4dao/frontend",
   "version": "1.0.0",
   "description": "Mp4Dao Frontend - Next.js Web Application",
+  "author": "Marcos de Jesus Araújo Cândido dos Santos <marcos.santos@mp4dao.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",

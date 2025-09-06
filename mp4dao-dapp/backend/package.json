@@ -2,7 +2,7 @@
   "name": "@mp4dao/backend",
   "version": "1.0.0",
   "description": "Mp4Dao Backend API - NestJS TypeScript",
-  "author": "Mp4Dao Team",
+  "author": "Marcos de Jesus Araújo Cândido dos Santos <marcos.santos@mp4dao.com>",
   "private": true,
   "license": "MIT",
   "scripts": {

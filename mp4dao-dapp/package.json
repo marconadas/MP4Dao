@@ -2,6 +2,15 @@
   "name": "mp4dao-dapp",
   "version": "1.0.0",
   "description": "dApp de Registo de Copyright Musical em Angola - Plataforma Web3 revolucionária",
+  "homepage": "https://mp4dao.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcossantos/mp4dao.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcossantos/mp4dao/issues"
+  },
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev:contracts\" \"npm run dev:backend\" \"npm run dev:frontend\"",
@@ -33,7 +42,7 @@
     "ipfs",
     "smart-contracts"
   ],
-  "author": "Mp4Dao Team",
+  "author": "Marcos de Jesus Araújo Cândido dos Santos <marcos.santos@mp4dao.com>",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2",
